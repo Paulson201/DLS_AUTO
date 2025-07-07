@@ -10,10 +10,10 @@ $user_id = $_SESSION['user_id'];
 $f_name = $_SESSION['user_fname'] ?? ''; // Assuming we stored first name in session
 
 // Database connection
-$host = 'localhost';
-$dbname = 'dls_auto';
-$username = 'root'; // Change as per your database configuration
-$password = '';
+$host = 'sql213.infinityfree.com'; // Change as per your database configuration
+$dbname = 'if0_39401242_als_auto'; // Change as per your database configuration
+$username = 'if0_39401242'; // Change as per your database configuration
+$password = 'LusHqW8PpA';
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $time = $conn->real_escape_string($_POST['time']);
     
     // SQL query to insert booking
-    $sql = "INSERT INTO bookings (user_id, f_name, vehicle_make, vehicle_model, model_year, service_type, booking_date, booking_time)
-            VALUES ('$user_id', '$f_name', '$make', '$model', '$year', '$service', '$date', '$time')";
-    
+    $sql = "INSERT INTO bookings (user_id, vehicle_make, vehicle_model, model_year, service_type, booking_date, booking_time)
+            VALUES ('$user_id', '$make', '$model', '$year', '$service', '$date', '$time')";
+
     if ($conn->query($sql)) {
         $confirmation = "Booking confirmed! Your vehicle $make $model is scheduled for $service service on $date at $time";
     } else {
