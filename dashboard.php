@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$conn = new mysqli('localhost', 'root', '', 'dls_auto');
+$conn = new mysqli('sql213.infinityfree.com', 'if0_39401242', 'LusHqW8PpA', 'if0_39401242_als_auto');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
