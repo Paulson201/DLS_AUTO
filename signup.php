@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $conn = new mysqli('localhost', 'root', '', 'dls_auto');
+    $conn = new mysqli('sql213.infinityfree.com', 'if0_39401242', 'LusHqW8PpA', 'if0_39401242_als_auto');
     
     $f_name = $conn->real_escape_string($_POST['f_name']);
     $l_name = $conn->real_escape_string($_POST['l_name']);

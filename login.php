@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $conn = new mysqli('localhost', 'root', '', 'dls_auto');
+    $conn = new mysqli('sql213.infinityfree.com', 'if0_39401242', 'LusHqW8PpA', 'if0_39401242_als_auto');
     
     $email = $conn->real_escape_string($_POST['email']);
     $password = $_POST['password'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
-            $_SESSION['user_fname'] = $user['first_name'];
+            $_SESSION['user_fname'] = $user['f_name'];
             header("Location: dashboard.php");
             exit();
         }
